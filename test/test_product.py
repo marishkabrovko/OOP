@@ -1,5 +1,15 @@
-def test_product(product):
-    assert product.name == '55" QLED 4K'
-    assert product.description == "Фоновая подсветка"
-    assert product.price == 123000.0
-    assert product.quantity == 7
+import pytest
+
+from src.product import Product
+
+
+@pytest.fixture
+def samsung():
+    return Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
+
+
+def test_product(samsung):  # тест на продукт
+    assert samsung.name == "Samsung Galaxy S23 Ultra"
+    assert samsung.description == "256GB, Серый цвет, 200MP камера"
+    assert samsung.price == 180000.0
+    assert samsung.quantity == 5
