@@ -3,5 +3,4 @@ mypy
 requests
 python-dotenv
 pytest
-pytest-mock
-pandas
+
