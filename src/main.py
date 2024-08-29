@@ -1,36 +1,5 @@
-class Product:
-    """Информация о свойтвах продуктах"""
-
-    name: str  # название продукта
-    description: str  # описание  продукта
-    price: str  # цена  продукта
-    quantity: float  # количество продукта
-
-    def __init__(self, name, description, price, quantity):
-        self.name = name
-        self.description = description
-        self.price = price
-        self.quantity = quantity
-
-
-class Category:
-    """Информация о котегориях"""
-
-    category_count = 0
-    product_count = 0
-
-    name: str  # название продукта
-    description: str  # описание продукта
-    products: str  # список товаров категории
-
-    def __init__(self, name, description, products):
-        self.name = name
-        self.description = description
-        self.products = products
-
-        Category.category_count += 1
-        Category.product_count += 1
-
+from src.category import Category
+from src.product import Product
 
 if __name__ == "__main__":
     product1 = Product(
@@ -63,7 +32,7 @@ if __name__ == "__main__":
 
     print(category1.name == "Смартфоны")
     print(category1.description)
-    print(len(category1.products))
+    print(len(category1.list_product))
     print(category1.category_count)
     print(category1.product_count)
 
@@ -77,8 +46,8 @@ if __name__ == "__main__":
 
     print(category2.name)
     print(category2.description)
-    print(len(category2.products))
-    print(category2.products)
+    print(len(category2.list_product))
+    print(category2.list_product)
 
     print(Category.category_count)
     print(Category.product_count)
