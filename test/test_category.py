@@ -13,4 +13,4 @@ def test_category_init(first_category, second_category):
 
 
 def test_category_products_property(first_category):
-    assert (first_category.list_product == "\n Samsung Galaxy S23 Ultra, 180000.0 руб., Остаток: 5 шт.\n Iphone 15, 210000.0 руб., Остаток: 8 шт.\n Xiaomi Redmi Note 11, 31000.0 руб., Остаток: 14 шт.")
+    assert (first_category.list_product == "\n Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.\n Iphone 15, 210000.0 руб. Остаток: 8 шт.\n Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.")
