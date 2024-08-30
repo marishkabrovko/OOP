@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     print(category1.name == "Смартфоны")
     print(category1.description)
-    print(len(category1.list_product))
+    print(category1.add_product)
     print(category1.category_count)
     print(category1.product_count)
 
@@ -46,8 +46,19 @@ if __name__ == "__main__":
 
     print(category2.name)
     print(category2.description)
-    print(len(category2.list_product))
-    print(category2.list_product)
+    print(category2.add_product)
 
     print(Category.category_count)
     print(Category.product_count)
+
+    new_product = Product.new_product({"name": "Samsung Galaxy S23 Ultra",
+                                       "description": "256GB, Серый цвет, 200MP камера",
+                                       "price": "180000.0", "quantity": 5})
+
+    new_product.price = 800
+    print(new_product.price)
+
+    new_product.price = -100
+    print(new_product.price)
+    new_product.price = 0
+    print(new_product.price)
