@@ -4,6 +4,7 @@ from src.category import Category
 from src.product import Product
 from src.profuct_iterator import ProductIterator
 
+
 @pytest.fixture
 def first_category():
     return Category(
@@ -40,11 +41,15 @@ def product():
 
 @pytest.fixture
 def product_sum_price1():
-    return Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
+    return Product(
+        "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
+    )
+
 
 @pytest.fixture
 def product_sum_price2():
     return Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
+
 
 @pytest.fixture
 def product_iterator(first_category):
