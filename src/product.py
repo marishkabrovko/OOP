@@ -1,4 +1,8 @@
-class Product:
+from src.BaseProduct import BaseProduct
+from src.print_mixin import PrintMixin
+
+
+class Product(BaseProduct, PrintMixin):
     """Информация о свойтвах продуктах"""
 
     name: str  # название продукта
@@ -12,6 +16,7 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
         Product.counter_of_all_products += quantity
 
     def __str__(self):
