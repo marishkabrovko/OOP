@@ -1,4 +1,5 @@
 from src.product import Product
+from src.exeptions import ZeroQuantityProduct
 
 
 class Category:
@@ -19,7 +20,7 @@ class Category:
         product = 0
         for i in self.__products:
             product += i.quantity
-        return f"{self.name}, колличество продуктов: {product} шт."
+        return f"{self.name}, количество продуктов: {product} шт."
 
     @property
     def products(self):
@@ -30,11 +31,26 @@ class Category:
 
     def add_product(self, product: Product):
         if isinstance(product, Product):
-            self.__products.append(product)
-            Category.product_count += 1
+            try:
+                if product.quantity == 0:
+                    raise ZeroQuantityProduct('Нельзя добавить товар с нулевым количеством')
+            except ZeroQuantityProduct as e:
+                print(str(e))
+            else:
+                self.__products.append(product)
+                Category.product_count += 1
+                print('Продукт добавлен успешно')
+            finally:
+                print('Обработка добавления продукта завершена')
         else:
             raise TypeError
 
     @property
     def products_in_list(self):
         return self.__products
+
+    def middle_price(self):
+        try:
+            return sum([product.price for product in self.products_in_list]) / len(self.products_in_list)
+        except ZeroDivisionError:
+            return 0

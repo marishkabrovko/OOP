@@ -101,3 +101,12 @@ def product_lawngrass2():
         "5 дней",
         "Темно-зеленый",
     )
+
+
+@pytest.fixture
+def category_without_product():
+    return Category(
+        name="Смартфоны",
+        description="Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
+        products=[]
+    )
